@@ -1,0 +1,10 @@
+        HikariConfig hikariConfig = new HikariConfig();
+        hikariConfig.setJdbcUrl("jdbc:postgresql://localhost:5432/Gamedb");
+        hikariConfig.setDriverClassName("org.postgresql.Driver");
+        hikariConfig.setUsername("postgres");
+        hikariConfig.setPassword("12345");
+        hikariConfig.setMaximumPoolSize(20);
+
+        HikariDataSource dataSource = new HikariDataSource(hikariConfig);
+
+        PlayersRepository playersRepository = new PlayersRepositoryImpl(dataSource);
